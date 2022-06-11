@@ -7,6 +7,9 @@
   justify-content: center;
   grid-row-gap: 2rem;
   justify-items: center;
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
 
   &__list {
     display: grid;
@@ -14,17 +17,35 @@
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     align-items: center;
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content;
+    }
   }
   &__img {
     width: 7rem;
     border-radius: 50%;
     display: block;
   }
-  // &__details {
-  // }
+  &__details {
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__details-last {
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 0;
+    }
+  }
   &__sold {
     text-transform: uppercase;
     color: $color-grey-light-2;
     margin-top: -3px;
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
   }
 }
